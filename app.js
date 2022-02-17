@@ -4,7 +4,14 @@ const cors = require("cors");
 const userComments = require("./UserComments");
 const userSubscribe = require("./UserSubscribe");
 
-sequelize.sync({ force: true }).then(() => console.log("db criado"));
+sequelize.sync({ force: true }).then(() => {
+  console.log("db criado");
+  userComments.create({
+    name: "Kelvin",
+    email: "kelvin@kelvin.com",
+    comment: "Bowls are trully the future.",
+  });
+});
 const app = express();
 
 app.use(cors());
