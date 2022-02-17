@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("./database");
 
-class UserInfo extends Model {}
+class UserSubscribed extends Model {}
 
-UserInfo.init(
+UserSubscribed.init(
   {
     name: {
       type: DataTypes.STRING,
@@ -11,14 +11,11 @@ UserInfo.init(
     email: {
       type: DataTypes.STRING,
     },
-    comment: {
-      type: DataTypes.STRING,
-    },
   },
   {
     sequelize,
-    modelName: "userinfo",
+    modelName: "usersubscribed",
   }
 );
 
-module.exports = UserInfo;
+module.exports = UserSubscribed;
